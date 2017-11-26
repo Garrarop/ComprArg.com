@@ -13,9 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="margin-top: 100px;">
+<body style="margin-top: 60px;">
       <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="/images/comprarg2.png" width="120px" alt="ComprArg.com"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img src="/images/comprarg2.png" width="120px" alt="ComprArg.com"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i>Inicio<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i>Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa fa-list" aria-hidden="true"></i>Categorias</a>
@@ -66,6 +66,9 @@
     <a class="nav-link" href="http://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
     <a class="nav-link" href="http://instagram.com" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
     <a class="nav-link"href="http://youtube.com" target="_blank"><i class="fa fa-youtube fa-3x" aria-hidden="true"></i></a>
+  </ul>
+  <ul class="nav justify-content-center block">
+    <a href="{{ Route('faq') }}">Preguntas frecuentes</a>
   </ul>
   <div style="text-align: end;">
     <span id="legal">Copyright <b>ComprArg.com</b><i class="fa fa-copyright" aria-hidden="true"></i> 2017 Copyright Holder All Rights Reserved.</span>
