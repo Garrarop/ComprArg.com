@@ -16,5 +16,11 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/FAQ', 'HomeController@faq')->name('faq');
 Route::get('/producto/{id}', 'BusquedasController@info')->name('producto');
 Route::get('/ResultadoDeLaBusqueda/{buscar}', 'BusquedasController@buscar')->name('buscar');
+Route::get('/perfil', 'UsuarioController@perfil')->name('perfil');
+Route::get('/perfil/favoritos', 'UsuarioController@fav')->name('favoritos');
 
 Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

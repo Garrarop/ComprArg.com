@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="margin-top: 60px;">
+<body style="margin-top: 63px;">
       <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{ route('home') }}"><img src="/images/comprarg2.png" width="120px" alt="ComprArg.com"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
               <li style="margin-right: 3px;" class="nav-item active"><a class="nav-link btn btn-outline-primary my-2 my-sm-0" href="{{ route('login') }}">Iniciar sesión</a></li>
               <li style="margin-right: 3px;" class="nav-item active"><a class="nav-link btn btn-outline-primary my-2 my-sm-0" href="{{ route('register') }}">Registrarme</a></li>
             @else
-                <li class="nav-item"><a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                <li class="nav-item"><a href="{{ route('perfil') }}" class="nav-link" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                   <i class="fa fa-user-circle" aria-hidden="true"></i>{{ Auth::user()->name }} <span class="caret"></span>
                 </a></li>
                   <li class="nav-item">
@@ -62,7 +62,7 @@
         @yield('content')
 <footer style="margin-top: 100px;">
   <ul class="nav justify-content-center block">
-    <a class="nav-link"href="http://facebook.com" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+    <a class="nav-link"href="https://www.facebook.com/Strawberry-Tattoo-118125415529431/" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
     <a class="nav-link" href="http://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
     <a class="nav-link" href="http://instagram.com" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
     <a class="nav-link"href="http://youtube.com" target="_blank"><i class="fa fa-youtube fa-3x" aria-hidden="true"></i></a>
