@@ -8,13 +8,13 @@ class BusquedasController extends Controller
 {
     public function info($id)
     {
-      $producto = 
+      $producto = " " ;
       return view('producto', compact('producto'));
     }
 
     public function buscar($buscar)
     {
-      $productos =
+      $productos = " " ;
       return view('resultados', compact('productos'));
     }
 }
