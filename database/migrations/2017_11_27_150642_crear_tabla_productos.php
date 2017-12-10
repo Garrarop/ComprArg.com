@@ -18,8 +18,8 @@ class CrearTablaProductos extends Migration
             $table->timestamps();
             $table->smallInteger('price');
             $table->string('name', 50);
-            $table->smallInteger('id_user');
-            $table->smallInteger('id_category');
+            $table->smallInteger('user_id');
+            $table->smallInteger('categorie_id');
             $table->text('description', 400);
         });
     }
@@ -31,6 +31,6 @@ class CrearTablaProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('products');
     }
 }
