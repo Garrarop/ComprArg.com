@@ -26,10 +26,10 @@
               <a class="nav-link" href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i>Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-list" aria-hidden="true"></i>Categorias</a>
+              <a class="nav-link" href="/categorias"><i class="fa fa-list" aria-hidden="true"></i>Categorias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-money" aria-hidden="true"></i>Vender</a>
+              <a class="nav-link" href="/Vender"><i class="fa fa-money" aria-hidden="true"></i>Vender</a>
             </li>
             @guest
               <li style="margin-right: 3px;" class="nav-item active"><a class="nav-link btn btn-outline-primary my-2 my-sm-0" href="{{ route('login') }}">Iniciar sesión</a></li>
