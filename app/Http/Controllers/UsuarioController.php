@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
+    public function publicar()
+    {
+      return view('vender');
+    }
     public function perfil()
     {
       return view('user.favoritos');
