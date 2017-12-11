@@ -3,9 +3,14 @@
   <title>Categorias</title>
 @endsection
 @section('content')
-  <div class="container">
-    @foreach ($categorias as $categoria)
-      <a href="/categoria/{{ $categoria->id }}">{{ $categoria->name }}</a>
-    @endforeach
+  <div class="container d-flex justify-content-center">
+    <table>
+      @foreach ($categorias as $categoria)
+        <tr>
+          <td><a href="/categoria/{{ $categoria->id }}">{{ $categoria->name }}</a></td>
+        </tr>
+      @endforeach
+
+    </table>
   </div>
 @endsection
