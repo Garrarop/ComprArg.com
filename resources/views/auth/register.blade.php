@@ -7,7 +7,7 @@
             <div class="card card-default">
                 <div class="card-header">Registrarme</div>
                 <div class="card-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" onSubmit="return validarPasswd()">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -38,18 +38,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="password" class="control-label">Contraseña</label>
 
                             <div class="">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                                
+                           </div>
                         </div>
 
                         <div class="form-group">
@@ -66,7 +62,42 @@
                                     Registrarme
                                 </button>
                             </div>
-                        </div>
+                       </div> 
+                       <script>
+                        var p1 = document.getElementById("password").value;
+                        var p2 = document.getElementById("password-confirm").value;
+                        
+                        var espacios = false;
+                        var cont = 0;
+                        
+                        function validarPasswd() {
+                            while (!espacios && (cont < p1.length)) {
+                            if (p1.charAt(cont) == " "){
+                                espacios = true;
+                            }
+                            cont++;
+                            }
+                        ` `
+                            if (espacios){
+                                alert ("La contraseña no puede contener espacios en blanco");
+                                return false;
+                            }
+
+                            if (p1.length == 0 || p2.length == 0) {
+                                debugger;
+                                alert("Los campos de la contraseña no pueden quedar vacios");
+                                return false;
+                            }
+
+                            if (p1 != p2) {
+                                alert("Las contraseñas deben de coincidir");
+                                return false;
+                            } else {
+                                alert("Todo esta correcto");
+                                return true; 
+                            }
+                        }
+                       </script>
                     </form>
                 </div>
             </div>
