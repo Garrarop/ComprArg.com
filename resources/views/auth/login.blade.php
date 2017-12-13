@@ -41,8 +41,10 @@
                           <div class="form-group">
                               <div class="col-md-6 col-md-offset-4">
                                   <div class="checkbox">
-                                      <label>
-                                          <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+                                      <label class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                          <span class="custom-control-indicator"></span>
+                                          <span class="custom-control-description">Recordarme</span>
                                       </label>
                                   </div>
                               </div>

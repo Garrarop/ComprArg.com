@@ -38,7 +38,11 @@
              <input type="file" class="form-control-file btn-outline-success">
            </div>
            <div class="form-group">
-             <label for="check">Acepto los <a href="/terms">Términos y condiciones</a> </label><input required style="margin-left: 5px;" id="check" type="checkbox" name="terms" value="">
+             <label class="custom-control custom-checkbox">
+               <input required class="custom-control-input" style="margin-left: 5px;" id="check" type="checkbox" name="terms" {{ old('terms') ? 'checked' : '' }}>
+               <span class="custom-control-indicator"></span>
+               <span class="custom-control-description">Acepto los <a href="/terms">Términos y condiciones</a></span>
+             </label>
            </div>
            <div class="form-group">
              <input type="submit" class="btn btn-primary" name="" value="Publicar">

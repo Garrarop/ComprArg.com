@@ -51,8 +51,8 @@
             @endguest
           </ul>
           <div class="inline">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="¿Qué estas buscando?" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="/resultados">
+              <input class="form-control mr-sm-2" type="text" name='buscar' placeholder="¿Qué estas buscando?" aria-label="Search">
               <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
 
