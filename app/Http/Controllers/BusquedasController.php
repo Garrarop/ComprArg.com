@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class BusquedasController extends Controller
 {
+    public function categorias()
+    {
+      $categorias = Categorie::all();
+      return view('categorias', compact('categorias'));
+    }
     public function info($id)
     {
       $producto = " " ;
