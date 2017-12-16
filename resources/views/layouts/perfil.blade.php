@@ -15,9 +15,9 @@
           <li><a href="/perfil/favoritos">Favoritos</a></li>
           <li><a href="/perfil/compras">Compras</a></li>
           <li><a href="/perfil/preguntas">Preguntas</a></li>
-          <li><a href="#">Publicaciones</a></li>
-          <li><a href="#">Ventas</a></li>
-          <li><a href="#">Configuración</a></li>
+          <li><a href="/perfil/publicaciones">Publicaciones</a></li>
+          <li><a href="/perfil/ventas">Ventas</a></li>
+          <li><a href="/perfil/configuracion">Configuración</a></li>
         </ul>
       </div>
   </div>

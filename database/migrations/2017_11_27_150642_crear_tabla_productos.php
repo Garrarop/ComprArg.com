@@ -20,7 +20,7 @@ class CrearTablaProductos extends Migration
             $table->string('name', 50);
             $table->smallInteger('user_id');
             $table->smallInteger('categorie_id');
-            $table->text('description', 400);
+            $table->text('description', 400)->nullable();
         });
     }
 

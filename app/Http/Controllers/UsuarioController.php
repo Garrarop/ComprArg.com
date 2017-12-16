@@ -3,11 +3,22 @@
 namespace App\Http\Controllers;
 use App\Categorie;
 use App\Product;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
+  
+    public function configuracion()
+    {
+      return view('user.config');
+    }
+    public function publicaciones()
+    {
+      $user = Auth::user()->id;
+      $productos = Product::where('user_id', '=', $user)->paginate(30);
+      return view('user.publicaciones', compact('productos'));
+    }
     public function publicarform()
     {
       $categorias = Categorie::all();
@@ -16,27 +27,20 @@ class UsuarioController extends Controller
     public function publicar(Request $request)
     {
       $this->validate($request, [
-        'name' => 'required|size:50',
+        'name' => 'required|max:50',
         'price' => 'required|numeric|min:0',
         'terms' => 'required|accepted',
-        'user_id' => 'required|numeric|exists:users,id'
+        'user_id' => 'required|numeric|exists:users,id',
+        'description' => 'required|max:400'
       ]
     );
+    $producto = new Product($request->all());
+    $producto->user_id = Auth::user()->id;
+    $producto->save();
+    return redirect(route('perfil'));
 
-
-      $producto = new Product;
-      $producto->name = $request->input('name');
-      $producto->user_id = $request->input('user_id');
-      $producto->price = $request->input('price');
-      $producto->categorie_id = $request->input('categorie_id');
-      $producto->description = $request->input('description');
-      dd($producto);
     }
     public function perfil()
-    {
-      return view('user.favoritos');
-    }
-    public function fav()
     {
       return view('user.favoritos');
     }

@@ -12,6 +12,15 @@
          <form class="" action="/Vender" method="post">
            {{ csrf_field() }}
            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+           @if(count($errors)>0)
+            	<p>
+            		<ul>
+            			@foreach($errors->all() as $error)
+            				<li style="color:red">{{ $error }}</li>
+            			@endforeach
+            		</ul>
+            	</p>
+          	@endif
            <div class="form-group">
              <label for="name">Título de la publicación:</label><input required class="form-control" id="name" type="text" name="name" value="{{ old('name') }}"><br>
            </div>
@@ -27,11 +36,12 @@
              <label for="categorie_id">Seleccione una categoría:</label><select required class="form-control" id="categorie_id" class="" name="categorie_id">
                @foreach ($categorias as $categoria)
                  <option class="form-control" value="{{ $categoria->id }}">{{ $categoria->name }}</option>
+                 <option class="form-control" value="">Agregar una categoria nueva</option>
                @endforeach
              </select><br>
            </div>
            <div class="form-group">
-             <label for="description">Introduzca una descripción: (Opcional)</label><textarea class="form-control" id="description" name="description" rows="8" cols="80" value="{{ old('description') }}"></textarea><br>
+             <label for="description">Introduzca una descripción: (Opcional)</label><textarea value="{{ old('description') }}" class="form-control" id="description" name="description" rows="8" cols="80" value="{{ old('description') }}"></textarea><br>
            </div>
            <div class="form-group">
              <label for="foto">Imagen principal del producto</label>
