@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title')
   <title>Vender</title>
+  <script src="/js/main.js" charset="utf-8"></script>
 @endsection
  @section('content')
    <div class="container">
@@ -11,7 +12,6 @@
        <div class="card-body">
          <form class="" action="/Vender" method="post">
            {{ csrf_field() }}
-           <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
            @if(count($errors)>0)
             	<p>
             		<ul>
@@ -22,13 +22,17 @@
             	</p>
           	@endif
            <div class="form-group">
-             <label for="name">Título de la publicación:</label><input required class="form-control" id="name" type="text" name="name" value="{{ old('name') }}"><br>
+             <label for="name">Título de la publicación:</label>
+             <div class="input-group">
+               <input autofocus required class="form-control" id="name" type="text" name="name" value="{{ old('name') }}">
+               <span id="cant" class="input-group-addon">0/50</span>
+             </div>
            </div>
            <div class="form-group">
              <label for="price">Precio del producto:</label>
              <div class="input-group">
                <span class="input-group-addon">$</span>
-               <input  required class="form-control" id="price" type="number" name="price" value="{{ old('price') }}"><br>
+               <input  required class="form-control" id="price" type="number" name="price" value="{{ old('price') }}">
                <span class="input-group-addon">ARS</span>
              </div>
            </div>
@@ -36,12 +40,12 @@
              <label for="categorie_id">Seleccione una categoría:</label><select required class="form-control" id="categorie_id" class="" name="categorie_id">
                @foreach ($categorias as $categoria)
                  <option class="form-control" value="{{ $categoria->id }}">{{ $categoria->name }}</option>
-                 <option class="form-control" value="">Agregar una categoria nueva</option>
                @endforeach
-             </select><br>
+               <option  class="form-control" value="0">Otro</option>
+             </select>
            </div>
            <div class="form-group">
-             <label for="description">Introduzca una descripción: (Opcional)</label><textarea value="{{ old('description') }}" class="form-control" id="description" name="description" rows="8" cols="80" value="{{ old('description') }}"></textarea><br>
+             <label for="description">Introduzca una descripción: (Opcional)</label><textarea value="{{ old('description') }}" class="form-control" id="description" name="description" rows="8" cols="80" value="{{ old('description') }}"></textarea>
            </div>
            <div class="form-group">
              <label for="foto">Imagen principal del producto</label>

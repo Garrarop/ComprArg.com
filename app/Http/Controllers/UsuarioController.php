@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-  
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
     public function configuracion()
     {
       return view('user.config');
@@ -30,14 +33,13 @@ class UsuarioController extends Controller
         'name' => 'required|max:50',
         'price' => 'required|numeric|min:0',
         'terms' => 'required|accepted',
-        'user_id' => 'required|numeric|exists:users,id',
-        'description' => 'required|max:400'
+        'description' => 'max:400'
       ]
     );
     $producto = new Product($request->all());
     $producto->user_id = Auth::user()->id;
     $producto->save();
-    return redirect(route('perfil'));
+    return redirect(route('publicaciones'));
 
     }
     public function perfil()

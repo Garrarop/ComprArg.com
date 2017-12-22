@@ -13,9 +13,8 @@
              <p>{{ $producto->description }}</p>
         </div>
       </div></a>
-      <a class="btn btn-outline-success" href="/producto/{{ $producto->id }}/editar">Editar</a>
-      <a  href="/producto/{{ $producto->id }}/eliminar">Eliminar</a>
-      <form  method="POST" action="{{ route('eliminar_publicacion', $producto) }}" onsubmit="return confirm('¿Está seguro que desea borrar esta publicación?')">
+      <a class="btn btn-outline-success" href="{{ route('editar_form', $producto) }}">Editar</a>
+      <form  class="d-inline" method="POST" action="{{ route('eliminar_publicacion', $producto) }}" onsubmit="return confirm('¿Está seguro que desea borrar esta publicación?')">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
         <button class="btn btn-outline-danger" type="submit">Eliminar</button>
