@@ -22,7 +22,7 @@ Route::get('/producto/{id}/editar', 'ProductosController@editarForm')->name('edi
 Route::put('/producto/{id}/editar', 'ProductosController@editar')->name('editar_producto');
 Route::get('/resultados', 'BusquedasController@buscar')->name('buscar');
 Route::get('/perfil', 'UsuarioController@perfil')->name('perfil');
-Route::get('/perfil/favoritos', 'UsuarioController@perfil')->name('favoritos');
+Route::get('/perfil/favoritos', 'UsuarioController@favoritos')->name('favoritos');
 Route::get('/perfil/publicaciones', 'UsuarioController@publicaciones')->name('publicaciones');
 Route::get('/perfil/configuracion', 'UsuarioController@config')->name('configuracion');
 Route::get('/categorias', 'BusquedasController@categorias')->name('categorias');
