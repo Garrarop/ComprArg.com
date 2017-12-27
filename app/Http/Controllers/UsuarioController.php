@@ -42,13 +42,8 @@ class UsuarioController extends Controller
     return redirect(route('publicaciones'));
 
     }
-    public function favoritos()
-    {
-      return view('user.favoritos');
-    }
     public function perfil()
     {
-      $user = Auth::user();
-      return view('user.perfil', compact('user'));
+      return view('user.favoritos');
     }
 }

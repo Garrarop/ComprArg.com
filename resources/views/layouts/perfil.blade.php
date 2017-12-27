@@ -3,9 +3,14 @@
   @yield('title')
 @endsection
 @section('content')
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
+  <div class="row">
+      <div class="col-1">
+
+      </div>
+      <div class="col-8">
+        @yield('section')
+      </div>
+      <div class="col-md-3">
         <ul class="list-unstyled">
           <li><a href="/perfil/favoritos">Favoritos</a></li>
           <li><a href="/perfil/compras">Compras</a></li>
@@ -15,12 +20,5 @@
           <li><a href="/perfil/configuracion">Configuración</a></li>
         </ul>
       </div>
-      <div class="col-8">
-        @yield('section')
-      </div>
-      <div class="col-1">
-
-      </div>
-    </div>
   </div>
 @endsection
